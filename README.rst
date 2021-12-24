@@ -10,8 +10,10 @@ Cookiecutter_ template for a Python package.
 Features
 --------
 
+* Project setup/packaging is handled with ``poetry`` and ``pyproject.toml`` file.
 * Testing setup with ``tox`` and ``pytest/coverage`` and Linting with ``flake8``.
-* Github Actions workflow for CI on push and pull request.
+* Github Actions workflow for CI is ready on push and pull request.
+* Github templates for issue and PR are ready.
 * ``tox`` testing: Setup to easily test for Python 3.6, 3.7, 3.8
 * ``Sphinx`` docs: Documentation ready for generation with ``read_the_docs`` theme.
 
