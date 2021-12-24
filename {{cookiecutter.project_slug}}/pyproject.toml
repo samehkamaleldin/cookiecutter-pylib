@@ -4,7 +4,7 @@
 [tool.poetry]
 name        = "{{cookiecutter.project_slug}}"
 version     = "{{cookiecutter.version}}"
-description = "{{cookiecutter.description}}"
+description = "{{cookiecutter.project_short_description}}"
 authors     = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
 # List of packages to be distributed
 packages = [
