@@ -12,10 +12,8 @@ Features
 
 * Testing setup with ``tox`` and ``pytest/coverage`` and Linting with ``flake8``.
 * Github Actions workflow for CI on push and pull request.
-* Tox_ testing: Setup to easily test for Python 3.6, 3.7, 3.8
-* Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
-
-.. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
+* ``tox`` testing: Setup to easily test for Python 3.6, 3.7, 3.8
+* ``Sphinx`` docs: Documentation ready for generation with ``read_the_docs`` theme.
 
 Quickstart
 ----------
@@ -33,7 +31,7 @@ Then:
 
 * Create a repo and put it there.
 * Initialize the conda environment. (``conda env create -f env.yml``)
-* Install requirements with poetry. (``poeyrt install``)
+* Install requirements with poetry. (``poetry install``)
 
 
 Not Exactly What You Want?
