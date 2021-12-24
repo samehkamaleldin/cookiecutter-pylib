@@ -10,6 +10,6 @@
       "GNU General Public License v3", "Not open source"],
   "_copy_without_render": [
     "*/_templates/*",
-    "*/.github/workflows/*"
+    "*.github/workflows*"
   ]
 }
