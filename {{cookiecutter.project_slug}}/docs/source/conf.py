@@ -8,8 +8,8 @@ import {{ cookiecutter.project_slug }}
 # -- Project information -----------------------------------------------------
 
 project = "{{ cookiecutter.project_slug }}"
-copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.user_full_name }}"
-author = "{{ cookiecutter.user_full_name }}"
+copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
+author = "{{ cookiecutter.full_name }}"
 release = {{ cookiecutter.project_slug }}.__version__
 
 # -- General configuration ---------------------------------------------------
