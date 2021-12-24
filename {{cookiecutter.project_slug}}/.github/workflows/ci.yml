@@ -1,0 +1,35 @@
+name: "CI"
+
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+    # the following defaults is mandatory to avoid issues
+    # with activating the conda environment:
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          activate-environment: env_conda
+          environment-file: env.yml
+          auto-activate-base: false
+      - name: Install requirements and lib using poetry
+        run: poetry install
+      - name: Tox run unit tests and coverage
+        run: tox -e py37
+      - name: Tox run flake8
+        run: tox -e flake8
+      - name: Check code compliance with black format
+        run: poetry run black . --check

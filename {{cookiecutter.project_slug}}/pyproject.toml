@@ -1,0 +1,100 @@
+# ==============================================================
+# = PROJECT METADATA                                           =
+# ==============================================================
+[tool.poetry]
+name        = "{{cookiecutter.project_slug}}"
+version     = "{{cookiecutter.version}}"
+description = "{{cookiecutter.description}}"
+authors     = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+# List of packages to be distributed
+packages = [
+    { include = "{{cookiecutter.project_slug}}", from = "src" },
+]
+# Other files to be distributed
+include = [
+  "CHANGELOG.md",
+  "CONTRIBUTING.md",
+  "LICENSE",
+  "README.md",
+]
+
+# ==============================================================
+# = CLI ENTRY POINTS: SCRIPTS                               =
+# ==============================================================
+[tool.poetry.scripts]
+pylib_exec = '{{cookiecutter.project_slug}}.entry:main'
+
+# ==============================================================
+# = PACKAGE DEPENDENCIES                                       =
+# ==============================================================
+[tool.poetry.dependencies]
+python     = ">=3.7.1"
+
+# ==============================================================
+# = DEVELOP DEPENDENCIES                                       =
+# ==============================================================
+[tool.poetry.dev-dependencies]
+tox        = "^3.24.4"
+pytest     = "^6.2.5"
+pytest-cov = "^3.0.0"
+coverage   = {version = ">=6.0", extras = ["toml"]}
+black      = "^21.12b0"
+sphinx     = "^4.0.1"
+recommonmark     = "^0.7.1"
+sphinx-rtd-theme = "^1.0.0"
+
+# ==============================================================
+# = The UNIT TESTING CONFIGURATIONS                            =
+# ==============================================================
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+xfail_strict = true
+testpaths = "tests"
+filterwarnings = [
+    "once::Warning",
+    "ignore:::importlib[.*]",
+]
+# ---------------------------------------------------------------
+[tool.coverage.run]
+parallel = true
+branch = true
+source = ["{{cookiecutter.project_slug}}"]
+# ---------------------------------------------------------------
+[tool.coverage.paths]
+source = ["src", ".tox/*/site-packages"]
+# ---------------------------------------------------------------
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    # typing-related code
+    "^if (False|TYPE_CHECKING):",
+    ": \\.\\.\\.$",
+    "^ +\\.\\.\\.$",
+    "-> ['\"]?NoReturn['\"]?:",
+]
+
+# ==============================================================
+# = BLACK CODE FORMATTING                                   =
+# ==============================================================
+[tool.black]
+line-length = 120
+target-version = ["py37"]
+exclude = '''
+/(
+    \.git
+  |  \.tox
+  | \.pytest_cache
+  | __pycache__
+)/
+'''
+
+# ==============================================================
+# = PROJECT BUILD INFO                                         =
+# ==============================================================
+[build-system]
+requires      = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
