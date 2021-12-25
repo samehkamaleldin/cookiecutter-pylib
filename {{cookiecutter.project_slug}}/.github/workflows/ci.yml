@@ -3,11 +3,9 @@ name: "CI: Lint & Test"
 on: [push, pull_request]
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: "ubuntu-latest"
     strategy:
       fail-fast: false
-      matrix:
-        os: ["ubuntu-latest"]
     # the following defaults is mandatory to avoid issues
     # with activating the conda environment:
     defaults:
@@ -18,11 +16,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.7.1"
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          activate-environment: env_conda
+          activate-environment: env_{{{{cookiecutter.project_slug}}}}
           environment-file: env.yml
           auto-activate-base: false
       - name: Install requirements and lib using poetry
