@@ -20,7 +20,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          activate-environment: env_{{{{cookiecutter.project_slug}}}}
+          activate-environment: env_{{cookiecutter.project_slug}}
           environment-file: env.yml
           auto-activate-base: false
       - name: Install requirements and lib using poetry
