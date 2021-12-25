@@ -2,7 +2,7 @@
 {{cookiecutter.project_short_description}}
 
 ![ci workflow](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/actions/workflows/ci.yml/badge.svg)
-![black](https://img.shields.io/badge/code%20style-black-000000.svg)
+![black](https://img.shields.io/badge/code%20style-black-black)
 ![license](https://img.shields.io/badge/license-{{cookiecutter.open_source_license}}-blue)
 
 ## Usage
