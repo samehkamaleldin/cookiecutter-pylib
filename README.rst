@@ -31,5 +31,5 @@ Generate a Python package project::
 
 When the project creation project is finished, you can now move to the project directorry and do the following:
 
-* Update the conda environment configuration (`env.yml`) and initialize it. (``conda env create -f env.yml``)
-* Configure and install requirements as from the `project.toml` file with poetry. (``poetry install``)
+* Update the conda environment configuration ``env.yml`` and initialize it. (``conda env create -f env.yml``)
+* Configure and install requirements as from the ``project.toml`` file with poetry. (``poetry install``)
