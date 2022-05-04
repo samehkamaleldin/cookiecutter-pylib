@@ -29,8 +29,7 @@ Generate a Python package project::
 
     cookiecutter https://github.com/samehkamaleldin/cookiecutter-pylib.git
 
-Then:
+When the project creation project is finished, you can now move to the project directorry and do the following:
 
-* Create a repo and put it there.
-* Initialize the conda environment. (``conda env create -f env.yml``)
-* Install requirements with poetry. (``poetry install``)
+* Update the conda environment configuration (`env.yml`) and initialize it. (``conda env create -f env.yml``)
+* Configure and install requirements as from the `project.toml` file with poetry. (``poetry install``)
