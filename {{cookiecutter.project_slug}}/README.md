@@ -18,10 +18,8 @@ poetry install
 ```
 
 ## Building documentation
-To build documentation using `sphinx`, run the following commands inside the `docs` directory:
-``` sh
-make html
-```
+Documentation are built using `mkdocs`, run the following commands `mkdocs build` to build the documentation and
+`mkdocs serve` to serve the documentation.
 
 ## License
 {{ cookiecutter.project_name }} is licensed under the {{ cookiecutter.open_source_license }} license.
