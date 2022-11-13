@@ -2,7 +2,7 @@
 Welcome to the {{cookiecutter.project_name}} documentation.
 
 ## Introduction
-{{cookiecutter.project_description}}
+{{cookiecutter.project_short_description}}
 
 ## Installation
 
